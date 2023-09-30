@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+      name="viewModel"
+      type="de.rogallab.mobile.MainViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+      android:id="@+id/main_tv_caption"
+      android:layout_width="395dp"
+      android:layout_height="wrap_content"
+      android:text='@{viewModel.caption}'
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:layout_marginTop="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+      android:id="@+id/main_et_name"
+      android:layout_width="395dp"
+      android:layout_height="60dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="Name"
+      android:text='@={viewModel.name}'
+      android:importantForAutofill="no"
+      android:inputType="textPersonName"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:layout_marginTop="16dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/main_tv_caption" />
+
+
+    <EditText
+      android:id="@+id/main_et_email"
+      android:layout_width="395dp"
+      android:layout_height="60dp"
+      android:autofillHints=""
+      android:ems="10"
+      android:hint="Email"
+      android:text='@={viewModel.email}'
+      android:importantForAutofill="no"
+      android:inputType="textEmailAddress"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:layout_marginTop="16dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/main_et_name" />
+
+    <CheckBox
+      android:id="@+id/main_checkBox"
+      android:text="Bitte klicken um ..."
+      android:checked='@={viewModel.isChecked}'
+      android:textSize="22sp"
+      android:layout_width="wrap_content"
+      android:layout_height="48dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginStart="8dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/main_et_email" />
+
+    <Button
+      android:id="@+id/main_bt_send"
+      android:layout_width="395dp"
+      android:layout_height="60dp"
+      android:text="Senden"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:layout_marginTop="16dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/main_checkBox" />
+
+
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
