@@ -66,6 +66,7 @@ class MainActivity : BaseActivity(TAG) {
 
    companion object {        //12345678901234567890123
       const val isDebug = true
+      const val isInfo = true
       private const val TAG = "ok>MainActivity       ."
       private const val NAME  = "MainActivityName"
       private const val EMAIL = "MainActivityEmail"
